@@ -8,9 +8,10 @@ A small intro weather api server created while learning Python.
 
 ## Tech Stack
 
-- **FastAPI**: Web framework
-- **httpx**: HTTP client for Python 3
-- **uvicorn**: Web server
+- [uv](https://github.com/astral-sh/uv) - package and project manager
+- [FastAPI](https://fastapi.tiangolo.com/) - modern web framework
+- [httpx](https://www.python-httpx.org/) - HTTP client for Python 3
+- [uvicorn](https://www.uvicorn.org/) - web server
 
 ## Setup
 
