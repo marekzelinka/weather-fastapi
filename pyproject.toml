@@ -1,5 +1,5 @@
 [project]
-name = "weather-fastapi"
+name = "weather-api"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -14,5 +14,6 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "ruff>=0.14.5",
+    "ruff>=0.14.10",
+    "ty>=0.0.8",
 ]

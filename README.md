@@ -1,6 +1,6 @@
 # Weather FastAPI
 
-A small intro weather api server created while learning Python.
+A small weather API that provides a fast, and simple REST API to get current weather info.
 
 ## Features
 
@@ -15,38 +15,44 @@ A small intro weather api server created while learning Python.
 
 ## Setup
 
-### 1. Install Dependencies
+This project uses the modern `pyproject.toml` standard for dependency management and requires the `uv` tool to manage the environment.
 
-```sh
-uv sync
-```
+1.  **Ensure `uv` is installed** globally on your system. If not, follow the official installation guide for [`uv`](https://docs.astral.sh/uv/).
 
-### 2. Environment Variables
 
-Copy the values from `env.example` to a `.env.local` file:
+2.  **Install deps**
 
-```sh
-openweather_api_key=your-api-key
-```
+    ```sh
+    uv sync
+    ```
 
-#### OpenWeather API key
+3.  **Setup env variables.**
 
-To get the API key, you need to [subscribe](https://openweathermap.org/price) to the **Current Weather Data** API.
+    ```sh
+    cp .env.example .env
+    ```
 
-### 3. Run Development Server
+4.  **GET OpenWeather API key.**
 
-```sh
-uv run python main.py
-```
+    To get the API key, you need to [subscribe](https://openweathermap.org/price) to the **Current Weather Data** API.
 
-Visit [http://0.0.0.0:8000](http://0.0.0.0:8000)
+5.  **Start app in dev mode**
+
+    ```sh
+    uv run uvicorn app.main:app --reload
+    ```
+
+## Development
+
+1. Setup your editor to work with [ruff](https://docs.astral.sh/ruff/editors/setup/) and [ty](https://docs.astral.sh/ty/editors/).
+
+2. Install the [justfile extension](https://just.systems/man/en/editor-support.html) for your editor, and use the provided `./justfile` to run commands.
 
 ## Usage
 
 ### Routes
 
-- GET `http://0.0.0.0:8000` - Service health check
-- GET `http://0.0.0.0:8000/weather/berlin` - Weather info for `berlin`
+Start the server and visit [the REST API docs](http://localhost:8000/docs).
 
 ## Architecture
 
@@ -64,5 +70,5 @@ We use the [OpenWeather](https://openweathermap.org/) API to get the current wea
 
 ## Next Steps
 
-- Add tests
-- Refactor env loading
+- [ ] Add tests
+- [x] Refactor env loading
